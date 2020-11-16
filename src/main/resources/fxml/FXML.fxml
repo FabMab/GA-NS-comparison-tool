@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+
+<AnchorPane id="AnchorPane" fx:id="Main" prefHeight="401.0" prefWidth="606.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="m.view.FXMLController">
+   <children>
+      <TabPane layoutY="14.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="384.0" prefWidth="606.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="OStab" text="OS Algorithm">
+               <content>
+                  <SplitPane dividerPositions="0.5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" orientation="VERTICAL" prefHeight="333.0" prefWidth="562.0">
+                    <items>
+                      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="164.0" prefWidth="580.0">
+                           <children>
+                              <Button fx:id="OScoupling" layoutX="40.0" layoutY="125.0" mnemonicParsing="false" onAction="#runOScoupling" text="Run Algorithm" />
+                              <Button fx:id="OScouplingCm" disable="true" layoutX="210.0" layoutY="125.0" mnemonicParsing="false" onAction="#displayOScouplingCm" text="Display Class Model" />
+                              <Button fx:id="OSCouplingGraph" disable="true" layoutX="420.0" layoutY="125.0" mnemonicParsing="false" onAction="#displayOSCouplingGraph" text="Display fitness graph" />
+                              <Label layoutX="205.0" layoutY="5.0" text="Objective search">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="51.0" text="Coupling fitness measure">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutY="107.0" prefHeight="0.0" prefWidth="599.0" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <Button fx:id="runOSelegance" layoutX="40.0" layoutY="105.0" mnemonicParsing="false" onAction="#runOSelegance" text="Run Algorithm" />
+                              <Button fx:id="OSeleganceCm" disable="true" layoutX="210.0" layoutY="105.0" mnemonicParsing="false" onAction="#displayOSeleganceCm" text="Display Class Model" />
+                              <Button fx:id="OSeleganceGraph" disable="true" layoutX="420.0" layoutY="105.0" mnemonicParsing="false" onAction="#displayOSeleganceGraph" text="Display fitness graph" />
+                              <Label layoutX="25.0" layoutY="29.0" text="Elegance characterisation">
+                                 <font>
+                                     <Font name="System Bold" size="14.0" />
+       
+                                 </font>
+                              </Label>
+                              <Separator layoutX="1.0" layoutY="94.0" prefHeight="4.0" prefWidth="599.0" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </content>
+            </Tab>
+          <Tab fx:id="NStab" text="NS Algorithm">
+               <content>
+                  <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="333.0" prefWidth="549.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" orientation="VERTICAL" prefHeight="329.0" prefWidth="800.0">
+                          <items>
+                            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <Button fx:id="runNScoupling" layoutX="14.0" layoutY="122.0" mnemonicParsing="false" onAction="#runNScoupling" text="Run NS Algorithm" translateX="40.0" />
+                                    <Button fx:id="NScouplingCm" disable="true" layoutX="127.0" layoutY="122.0" mnemonicParsing="false" onAction="#displayNScouplingCm" text="Display Class Model" translateX="100.0" />
+                                    <Button fx:id="NSCouplingGraph" disable="true" layoutX="275.0" layoutY="122.0" mnemonicParsing="false" onAction="#displayNSCouplingGraph" text="Display graph" translateX="150.0" />
+                                    <Label layoutX="205.0" layoutY="5.0" text="Novelty Search ">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="12.0" layoutY="47.0" text="Select mutation rate" />
+                                    <Label layoutX="231.0" layoutY="47.0" text="Select crossover rate " />
+                                    <Label layoutX="406.0" layoutY="47.0" text="Select generation count" />
+                                    <Label layoutX="14.0" layoutY="18.0" text="Coupling fitness ">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <ChoiceBox fx:id="NSCouplingMut" layoutX="47.0" layoutY="68.0" prefHeight="25.0" prefWidth="64.0" value="0.2">
+                                     <items>
+                                            <FXCollections fx:factory="observableArrayList">
+                                             <String fx:id="mut1" fx:value="0.3" />
+                                             <String fx:id="mut2" fx:value="0.25" />
+                                             <String fx:id="mut3" fx:value="0.2" />
+                                            <String fx:id="mut4" fx:value="0.15" />
+                                             <String fx:id="mut5" fx:value="0.1" /> 
+                                                
+                                            </FXCollections>
+                                        </items>
+                                </ChoiceBox>   
+                                    <ChoiceBox fx:id="NSCouplingCross" layoutX="247.0" layoutY="68.0" prefHeight="25.0" prefWidth="73.0" value="0.8">
+                                        <items>
+                                            <FXCollections fx:factory="observableArrayList">
+                                             <String fx:id="cross1" fx:value="0.7" />
+                                             <String fx:id="cross2" fx:value="0.75" />
+                                             <String fx:id="cross3" fx:value="0.8" />
+                                            <String fx:id="cross4" fx:value="0.85" />
+                                             <String fx:id="cross5" fx:value="0.9" /> 
+                                             <String fx:id="cross6" fx:value="0.95" />   
+                                            </FXCollections>
+                                        </items>
+                                </ChoiceBox>
+                                    <ChoiceBox fx:id="NSCouplingCount" layoutX="424.0" layoutY="68.0" prefHeight="25.0" prefWidth="91.0" value="500">
+                                    <items>
+                                            <FXCollections fx:factory="observableArrayList">
+                                             <String fx:id="gen1" fx:value="50" />
+                                             <String fx:id="gen2" fx:value="100" />
+                                             <String fx:id="gen3" fx:value="200" />
+                                            <String fx:id="gen4" fx:value="300" />
+                                             <String fx:id="gen5" fx:value="400" /> 
+                                             <String fx:id="gen6" fx:value="500" />   
+                                            </FXCollections>
+                                        </items>
+                                </ChoiceBox>
+                                    <Separator layoutY="106.0" prefHeight="0.0" prefWidth="599.0" />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="155.0" prefWidth="365.0">
+                                 <children>
+                                    <Button fx:id="runNSelegance" layoutX="14.0" layoutY="122.0" mnemonicParsing="false" onAction="#runNSelegance" text="Run NS Algorithm" translateX="40.0" />
+                                    <Button fx:id="NSeleganceCm" disable="true" layoutX="127.0" layoutY="122.0" mnemonicParsing="false" onAction="#displayNSeleganceCm" text="Display Class Model" translateX="100.0" />
+                                    <Button fx:id="NSeleganceGraph" disable="true" layoutX="275.0" layoutY="122.0" mnemonicParsing="false" onAction="#displayNSeleganceGraph" text="Display graph" translateX="150.0" />
+                                    <Label layoutX="14.0" layoutY="18.0" text="Elegance characterisation">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="12.0" layoutY="47.0" text="Select mutation rate" />
+                                    <Label layoutX="231.0" layoutY="47.0" text="Select crossover rate" />
+                                    <Label layoutX="406.0" layoutY="47.0" text="Select generation count " />
+                                    <ChoiceBox fx:id="NSeleganceMut" layoutX="47.0" layoutY="68.0" prefHeight="25.0" prefWidth="64.0" value="0.2">
+                                        <items>
+                                            <FXCollections fx:factory="observableArrayList">
+                                             <String fx:id="mute1" fx:value="0.3" />
+                                             <String fx:id="mute2" fx:value="0.25" />
+                                             <String fx:id="mute3" fx:value="0.2" />
+                                            <String fx:id="mute4" fx:value="0.15" />
+                                             <String fx:id="mute5" fx:value="0.1" /> 
+                                                
+                                            </FXCollections>
+                                        </items>
+                                </ChoiceBox>   
+                                    <ChoiceBox fx:id="NSeleganceCross" layoutX="247.0" layoutY="68.0" prefHeight="25.0" prefWidth="73.0" value="0.8">
+                                        <items>
+                                            <FXCollections fx:factory="observableArrayList">
+                                             <String fx:id="crosse1" fx:value="0.70" />
+                                             <String fx:id="crosse2" fx:value="0.75" />
+                                             <String fx:id="crosse3" fx:value="0.8" />
+                                            <String fx:id="crosse4" fx:value="0.85" />
+                                             <String fx:id="crosse5" fx:value="0.9" /> 
+                                             <String fx:id="crosse6" fx:value="0.95" />   
+                                            </FXCollections>
+                                        </items>
+                                </ChoiceBox>
+                                    <ChoiceBox fx:id="NSeleganceCount" layoutX="413.0" layoutY="68.0" prefHeight="25.0" prefWidth="91.0" value="500">
+                                    <items>
+                                            <FXCollections fx:factory="observableArrayList">
+                                             <String fx:id="gene1" fx:value="50" />
+                                             <String fx:id="gene2" fx:value="100" />
+                                             <String fx:id="gene3" fx:value="200" />
+                                            <String fx:id="gene4" fx:value="300" />
+                                             <String fx:id="gene5" fx:value="400" /> 
+                                             <String fx:id="gene6" fx:value="500" />   
+                                            </FXCollections>
+                                        </items>
+                                </ChoiceBox>
+                                    <Separator layoutX="-1.0" layoutY="106.0" prefHeight="0.0" prefWidth="599.0" />
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+            <Tab text="Results">
+              <content>
+                <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="355.0" prefWidth="583.0">
+                     <children>
+                        <Pane layoutX="5.0" layoutY="5.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="341.0" prefWidth="587.0">
+                           <children>
+                              <TextArea fx:id="outputResult" editable="false" layoutX="7.0" layoutY="7.0" maxHeight="490.0" maxWidth="645.0" prefHeight="327.0" prefWidth="573.0" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

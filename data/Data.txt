@@ -1,0 +1,16 @@
+dateTime
+showingNumber
+title
+ageRating
+duration
+trailer
+seats
+ticketsType
+bookingNumber
+quantity
+cost
+cardNumber
+cardType
+expiryDate
+ScreenNumber
+capacity
